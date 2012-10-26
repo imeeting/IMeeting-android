@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.richitec.commontoolkit.addressbook.AddressBookManager;
 import com.richitec.commontoolkit.addressbook.ContactBean;
@@ -44,16 +45,14 @@ public class SettingActivity extends IMeetingNavigationActivity {
 		setTitle(R.string.setting_nav_title_text);
 
 		// bind account setting button on click listener
-		((Button) findViewById(R.id.accountSetting_btn))
+		
+		((LinearLayout)findViewById(R.id.accountSetting_item))
 				.setOnClickListener(new AccountSettingBtnOnClickListener());
-
-		// bind help button on click listener
-		((Button) findViewById(R.id.help_btn))
-				.setOnClickListener(new HelpBtnOnClickListener());
-
-		// bind about button on click listener
-		((Button) findViewById(R.id.about_btn))
-				.setOnClickListener(new AboutBtnOnClickListener());
+		((LinearLayout)findViewById(R.id.about_item))
+		.setOnClickListener(new AboutBtnOnClickListener());
+		((LinearLayout)findViewById(R.id.help_item))
+		.setOnClickListener(new HelpBtnOnClickListener());
+		
 
 	}
 
