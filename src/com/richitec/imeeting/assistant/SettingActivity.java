@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.richitec.commontoolkit.addressbook.AddressBookManager;
 import com.richitec.commontoolkit.addressbook.ContactBean;
@@ -38,14 +39,15 @@ public class SettingActivity extends IMeetingNavigationActivity {
 		super.onCreate(savedInstanceState);
 
 		// set content view
-		setContentView(R.layout.setting_activity_layout);
+		setContentView(R.layout.setting_activity_layout2);
 
 		// set title text
 		setTitle(R.string.setting_nav_title_text);
 
 		// bind account setting button on click listener
-		((Button) findViewById(R.id.accountSetting_btn))
+		/*((Button) findViewById(R.id.accountSetting_btn))
 				.setOnClickListener(new AccountSettingBtnOnClickListener());
+		
 
 		// bind help button on click listener
 		((Button) findViewById(R.id.help_btn))
@@ -53,7 +55,15 @@ public class SettingActivity extends IMeetingNavigationActivity {
 
 		// bind about button on click listener
 		((Button) findViewById(R.id.about_btn))
-				.setOnClickListener(new AboutBtnOnClickListener());
+				.setOnClickListener(new AboutBtnOnClickListener());*/
+		
+		((LinearLayout)findViewById(R.id.accountSetting_item))
+				.setOnClickListener(new AccountSettingBtnOnClickListener());
+		((LinearLayout)findViewById(R.id.about_item))
+		.setOnClickListener(new AboutBtnOnClickListener());
+		((LinearLayout)findViewById(R.id.help_item))
+		.setOnClickListener(new HelpBtnOnClickListener());
+		
 
 	}
 

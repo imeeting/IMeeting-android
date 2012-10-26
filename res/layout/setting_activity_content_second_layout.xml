@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/img_setting_content_bg"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10.0dp"
+    android:layout_marginRight="10.0dp"
+    android:layout_marginTop="10.0dp"
+    >
+    
+    <LinearLayout 
+        android:id="@+id/addressbook_upload_item"
+        android:onClick="onAddressBookUploadButtonClick"
+        android:background="@drawable/setting_alone_item_bg"
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        
+        <TextView
+            android:textSize="18.0sp" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1.0"
+            android:textColor="@color/dark_gray"
+            android:layout_marginLeft="10.0dp"
+            android:text="@string/addressbook_upload_btn_title"
+            android:gravity="center_vertical"
+            />
+        <ImageView 
+            android:layout_width="12.0dp"
+            android:layout_height="12.0dp"
+            android:layout_marginRight="10.0dp"
+            android:src="@drawable/img_setting_into_icon"
+            />                   
+    </LinearLayout>
+    
+</LinearLayout>
