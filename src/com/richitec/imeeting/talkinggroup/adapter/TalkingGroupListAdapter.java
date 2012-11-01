@@ -8,16 +8,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.richitec.commontoolkit.addressbook.AddressBookManager;
 import com.richitec.imeeting.R;
+import com.richitec.imeeting.constants.Attendee;
 import com.richitec.imeeting.constants.TalkGroup;
 import com.richitec.imeeting.util.AppUtil;
 
@@ -129,6 +133,14 @@ public class TalkingGroupListAdapter extends BaseAdapter {
 						((TextView) ((RelativeLayout) _tableRowItem)
 								.findViewById(R.id.attendee_name_textView))
 								.setText(AppUtil.getDisplayNameFromAttendee(attendee));
+						String userName = attendee.getString(Attendee.username.name());
+						Bitmap avatar = AppUtil.getAvatar(userName);
+						ImageView imgView = (ImageView) _tableRowItem.findViewById(R.id.attendee_avatar_imageView);
+						if (avatar != null) {
+							imgView.setImageBitmap(avatar);
+						} else {
+							imgView.setImageResource(R.drawable.default_avatar);
+						}
 					}
 				} else {
 					_tableRowItem.setVisibility(View.GONE);

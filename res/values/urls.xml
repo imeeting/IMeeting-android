@@ -31,5 +31,5 @@
     <string name="app_version_url">/appVersion/android</string>
     <!-- other -->
     <string name="notify_url">http://msg.wetalking.net</string>
-
+	<string name="rtmp_server_url">rtmp://rtmp.wetalking.net/quick_server</string>
 </resources>

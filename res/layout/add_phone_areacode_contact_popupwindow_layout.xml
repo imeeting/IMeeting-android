@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/half_transparent" >
+
+    <RelativeLayout
+        android:id="@+id/add_phoneAreaCode_popupWindow_relativeLayout"
+        android:layout_width="260dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/add_manualinputcontact_popupwindow_relativelayout_bg" >
+
+        <Button
+            android:id="@+id/add_phoneAreaCode_popupWindow_dismiss_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="-6dp"
+            android:background="@android:color/transparent"
+            android:text="@string/add_manualInputContact_popupWindow_dismiss_btn_title"
+            android:textColor="@android:color/white"
+            android:textSize="30dp" />
+        
+        <TextView
+            android:id="@+id/add_phoneAreaCode_popupWindow_titleTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:text="@string/addPhonesAreaCode_PopupWindow_titleTextView_text"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/add_phoneAreaCode_popupWindow_editText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/add_phoneAreaCode_popupWindow_titleTextView"
+            android:background="@drawable/edit_text_bg"
+            android:textColor="@android:color/black"
+            android:ellipsize="end"
+            android:hint="@string/add_manualInputContact_editText_hint"
+            android:inputType="phone" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/add_phoneAreaCode_popupWindow_confirmBtn"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="17dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/add_manualinputcontact_popupwindow_confirmbtn_bg"
+            android:text="@string/add_phoneAreaCode_confirmBtn_title"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@drawable/component_normal7pressed_textcolor" />
+    </RelativeLayout>
+
+</FrameLayout>

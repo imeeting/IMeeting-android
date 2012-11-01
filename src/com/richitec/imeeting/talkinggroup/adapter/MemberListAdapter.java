@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -185,7 +186,15 @@ public class MemberListAdapter extends BaseAdapter {
 		String displayName = AppUtil.getDisplayNameFromAttendee(member);
 		String onlineStatus = member.get(Attendee.online_status.name());
 		String telephoneStatus = member.get(Attendee.telephone_status.name());
-
+		
+		String userName = member.get(Attendee.username.name());
+		Bitmap avatar = AppUtil.getAvatar(userName);
+		if (avatar != null) {
+			viewHolder.avatarView.setImageBitmap(avatar);
+		} else {
+			viewHolder.avatarView.setImageResource(R.drawable.default_avatar);
+		}
+		
 		viewHolder.nameView.setText(displayName);
 
 		if (Attendee.OnlineStatus.online.name().equals(onlineStatus)) {

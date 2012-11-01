@@ -8,8 +8,10 @@
         android:targetSdkVersion="15" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -17,7 +19,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="IMeetingAppLaunchActivity"
-            android:theme="@style/AppActivityTheme" android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActivityTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,38 +30,54 @@
         <activity
             android:name=".account.AccountSettingActivity"
             android:label=""
-            android:theme="@style/WithBgImg7NoTitleActivityTheme" android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/WithBgImg7NoTitleActivityTheme" >
         </activity>
         <activity
             android:name=".account.AccountRegisterActivity"
             android:label=""
-            android:theme="@style/WithBgImg7NoTitleActivityTheme" android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/WithBgImg7NoTitleActivityTheme" >
         </activity>
         <activity
             android:name=".talkinggroup.TalkingGroupHistoryListActivity"
             android:label=""
-            android:theme="@style/WithBgImg7NoTitleActivityTheme" android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/WithBgImg7NoTitleActivityTheme" >
         </activity>
         <activity
             android:name=".assistant.SettingActivity"
             android:label=""
-            android:theme="@style/WithBgImg7NoTitleActivityTheme" android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/WithBgImg7NoTitleActivityTheme" >
         </activity>
         <activity
             android:name=".contactselect.ContactSelectActivity"
-            android:label="" android:screenOrientation="portrait">
+            android:label=""
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".assistant.SupportActivity"
-            android:label="" android:screenOrientation="portrait">
+            android:label=""
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".assistant.AboutActivity"
             android:label=""
-            android:theme="@style/WithBgImg7NoTitleActivityTheme" android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/WithBgImg7NoTitleActivityTheme" >
         </activity>
-        <activity android:name=".talkinggroup.TalkingGroupActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
-        <activity android:name=".assistant.AccountChargeActivity" android:screenOrientation="portrait" android:theme="@style/WithBgImg7NoTitleActivityTheme"></activity>
+        <activity
+            android:name=".talkinggroup.TalkingGroupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".assistant.AccountChargeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/WithBgImg7NoTitleActivityTheme" >
+        </activity>
+        <service android:name="com.richitec.imeeting.service.ContactSyncService"></service>
     </application>
 
 </manifest>

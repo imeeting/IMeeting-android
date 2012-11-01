@@ -3,110 +3,139 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <RelativeLayout
-        android:id="@+id/gt_topbar"
+    <ViewFlipper
+        android:id="@+id/gt_view_flipper"
         android:layout_width="fill_parent"
-        android:layout_height="44dip"
-        android:background="@drawable/navigationbar" >
+        android:layout_height="fill_parent" >
 
-        <TextView
-            android:id="@+id/gt_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/group_talk_title"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#ffffff"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
-        android:id="@+id/gt_memberlist"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/gt_bottombar"
-        android:layout_below="@+id/gt_topbar"
-        android:dividerHeight="1dip" />
-  
-    <LinearLayout
-        android:id="@+id/gt_bottombar"
-        android:layout_width="fill_parent"
-        android:layout_height="74dip"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bottom_bar"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/gt_add_member_bt"
-            android:layout_width="80dip"
-            android:layout_height="fill_parent"
-            android:background="@drawable/bottombar_bt_bg"
-            android:drawablePadding="-10dip"
-            android:drawableTop="@drawable/addcontact"
-            android:onClick="onAddMemberAction"
-            android:paddingTop="12dip"
-            android:text="@string/add_member"
-            android:textColor="@android:color/white" />
-
-        <ImageView
-            android:id="@+id/gt_bottom_sep1"
-            android:layout_width="2dip"
-            android:layout_height="fill_parent"
-            android:paddingTop="1dip"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bottom_sep_line" />
-
-        <Button
-            android:id="@+id/gt_sms_invite_bt"
-            android:layout_width="80dip"
-            android:layout_height="fill_parent"
-            android:background="@drawable/bottombar_bt_bg"
-            android:drawablePadding="-10dip"
-            android:drawableTop="@drawable/sms"
-            android:onClick="onSmsInviteAction"
-            android:paddingTop="12dip"
-            android:text="@string/sms_invite"
-            android:textColor="@android:color/white" />
-
-        <ImageView
-            android:id="@+id/gt_bottom_sep2"
-            android:layout_width="2dip"
-            android:layout_height="fill_parent"
-            android:paddingTop="1dip"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bottom_sep_line" />
-
-        <Button
-            android:id="@+id/gt_dial_bt"
-            android:layout_width="80dip"
-            android:layout_height="fill_parent"
-            android:background="@drawable/bottombar_bt_bg"
-            android:drawablePadding="-10dip"
-            android:drawableTop="@drawable/dial"
-            android:onClick="onDialAction"
-            android:paddingTop="12dip"
-            android:text="@string/dial_all"
-            android:textColor="@android:color/white" />
-
-        <ImageView
-            android:layout_width="2dip"
-            android:layout_height="fill_parent"
-            android:paddingTop="1dip"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bottom_sep_line" />
-
-        <Button
-            android:id="@+id/gt_leave_bt"
+        <RelativeLayout
+            android:id="@+id/gt_member_list_view"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_gravity="right"
-            android:background="@drawable/bottombar_bt_bg"
-            android:drawablePadding="-10dip"
-            android:drawableTop="@drawable/leave"
-            android:onClick="onLeaveAction"
-            android:paddingTop="12dip"
-            android:text="@string/leave"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:id="@+id/gt_topbar"
+                android:layout_width="fill_parent"
+                android:layout_height="52dip"
+                android:background="@drawable/img_imeeting_navbar_bg" >
+
+                <TextView
+                    android:id="@+id/gt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/group_talk_title"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="2dip"
+                    android:background="@drawable/right_bar_button_item_bg"
+                    android:onClick="onSwitchToVideoView"
+                    android:text="@string/video"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+            <com.handmark.pulltorefresh.library.PullToRefreshListView
+                android:id="@+id/gt_memberlist"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/gt_bottombar"
+                android:layout_below="@+id/gt_topbar"
+                android:dividerHeight="1dip" />
+
+            <LinearLayout
+                android:id="@+id/gt_bottombar"
+                android:layout_width="fill_parent"
+                android:layout_height="74dip"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bottom_bar"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/gt_add_member_bt"
+                    android:layout_width="80dip"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/bottombar_bt_bg"
+                    android:drawablePadding="-10dip"
+                    android:drawableTop="@drawable/addcontact"
+                    android:onClick="onAddMemberAction"
+                    android:paddingTop="12dip"
+                    android:text="@string/add_member"
+                    android:textColor="@android:color/white" />
+
+                <ImageView
+                    android:id="@+id/gt_bottom_sep1"
+                    android:layout_width="2dip"
+                    android:layout_height="fill_parent"
+                    android:paddingTop="1dip"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bottom_sep_line" />
+
+                <Button
+                    android:id="@+id/gt_sms_invite_bt"
+                    android:layout_width="80dip"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/bottombar_bt_bg"
+                    android:drawablePadding="-10dip"
+                    android:drawableTop="@drawable/sms"
+                    android:onClick="onSmsInviteAction"
+                    android:paddingTop="12dip"
+                    android:text="@string/sms_invite"
+                    android:textColor="@android:color/white" />
+
+                <ImageView
+                    android:id="@+id/gt_bottom_sep2"
+                    android:layout_width="2dip"
+                    android:layout_height="fill_parent"
+                    android:paddingTop="1dip"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bottom_sep_line" />
+
+                <Button
+                    android:id="@+id/gt_dial_bt"
+                    android:layout_width="80dip"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/bottombar_bt_bg"
+                    android:drawablePadding="-10dip"
+                    android:drawableTop="@drawable/dial"
+                    android:onClick="onDialAction"
+                    android:paddingTop="12dip"
+                    android:text="@string/dial_all"
+                    android:textColor="@android:color/white" />
+
+                <ImageView
+                    android:layout_width="2dip"
+                    android:layout_height="fill_parent"
+                    android:paddingTop="1dip"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bottom_sep_line" />
+
+                <Button
+                    android:id="@+id/gt_leave_bt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="right"
+                    android:background="@drawable/bottombar_bt_bg"
+                    android:drawablePadding="-10dip"
+                    android:drawableTop="@drawable/leave"
+                    android:onClick="onLeaveAction"
+                    android:paddingTop="12dip"
+                    android:text="@string/leave"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include layout="@layout/talk_group_video_view" />
+    </ViewFlipper>
 
 </RelativeLayout>

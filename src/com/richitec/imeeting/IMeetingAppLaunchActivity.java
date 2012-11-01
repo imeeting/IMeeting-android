@@ -2,8 +2,9 @@ package com.richitec.imeeting;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Looper;
 import android.util.Log;
-
 import com.richitec.commontoolkit.activityextension.AppLaunchActivity;
 import com.richitec.commontoolkit.addressbook.AddressBookManager;
 import com.richitec.commontoolkit.user.User;
@@ -12,10 +13,11 @@ import com.richitec.commontoolkit.user.UserManager;
 import com.richitec.commontoolkit.utils.DataStorageUtils;
 import com.richitec.imeeting.account.AccountSettingActivity;
 import com.richitec.imeeting.constants.SystemConstants;
+import com.richitec.imeeting.service.ContactSyncService;
 import com.richitec.imeeting.talkinggroup.TalkingGroupHistoryListActivity;
+import com.richitec.imeeting.video.ECVideoEncoder;
 
 public class IMeetingAppLaunchActivity extends AppLaunchActivity {
-
 	// main activity class name storage key
 	@Override
 	public Drawable splashImg() {
@@ -24,8 +26,11 @@ public class IMeetingAppLaunchActivity extends AppLaunchActivity {
 
 	@Override
 	public Intent intentActivity() {
-		loadAccount();
+		//start contact syncService
+		Intent service = new Intent(this, ContactSyncService.class);
+		startService(service);
 		
+		loadAccount();
 		Intent intent = null;
 		UserBean user = UserManager.getInstance().getUser();
 		if (user.getPassword() != null && !user.getPassword().equals("")
@@ -44,6 +49,8 @@ public class IMeetingAppLaunchActivity extends AppLaunchActivity {
 	public void didFinishLaunching() {
 		// traversal address book
 		AddressBookManager.getInstance().traversalAddressBook();
+		//Looper.prepare();
+		//AddressBookManager.getInstance().registContactOberver();
 	}
 
 	private void loadAccount() {
