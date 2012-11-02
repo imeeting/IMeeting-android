@@ -167,9 +167,9 @@
     <string name="contact_hasNoPhone_alertDialog_title">此人没有号码</string>
     <string name="contact_hasNoPhone_alertDialog_reselectBtn_title">重新选择</string>
     <string name="contactPhones_selectPopupWindow_titleTextView_text">选择 *** 加入群聊的号码</string>
-    <string name="addPhonesAreaCode_PopupWindow_titleTextView_text">修改号码（固话加拨区号）！</string>
+    <string name="addPhonesAreaCode_PopupWindow_titleTextView_text">修改号码（固话加拨区号）</string>
     <string name="wrong_phonenumber_format">号码格式有误，请检查（固话加拨区号）</string>
-    <string name="wrong_phone_format_inform_titleTextView_text">号码***可能不是电话号码，或者是固定电话但未加区号。请选择是否修改:</string>
+    <string name="wrong_phone_format_inform_titleTextView_text">号码***可能不是电话号码，或者是固定电话但未加区号。\n请选择是否修改:</string>
     <string name="add_phoneAreaCode_confirmBtn_title">修改</string>
     <string name="contactPhones_selectPopupWindow_cancelBtn_title">取消</string>
     <string name="error_in_invite_member">邀请新成员失败！</string>

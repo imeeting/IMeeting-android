@@ -23,7 +23,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:gravity="center"
+            android:gravity="fill"
             android:text="@string/wrong_phone_format_inform_titleTextView_text"
             android:textColor="@android:color/white" />
         
@@ -40,7 +40,7 @@
 	        <Button
 	            android:id="@+id/wrong_phoneFormat_popupWindow_confirmBtn"
 	            android:layout_width="100dp"
-	            android:layout_height="wrap_content"
+	            android:layout_height="30dp"
 	            android:layout_marginRight="10dp"
 	            android:background="@drawable/add_manualinputcontact_popupwindow_confirmbtn_bg"
 	            android:text="@string/add_phoneAreaCode_confirmBtn_title"
@@ -50,7 +50,7 @@
 	        <Button
 	            android:id="@+id/wrong_phoneFormat_popupWindow_cancelBtn"
 	            android:layout_width="100dp"
-	            android:layout_height="wrap_content"
+	            android:layout_height="30dp"
 	            android:layout_marginLeft="10dp"
 	            android:background="@drawable/add_manualinputcontact_popupwindow_confirmbtn_bg"
 	            android:text="@string/contactPhones_selectPopupWindow_cancelBtn_title"
