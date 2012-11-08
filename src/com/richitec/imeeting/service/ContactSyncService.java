@@ -20,11 +20,13 @@ public class ContactSyncService extends Service{
 		public void onChange(boolean selfChange) {
 			// 当联系人表发生变化时进行相应的操作
 			Log.d("ContactSynService", "Contacts Modified");
-			int updateType = AddressBookManager.getInstance().syncContact();
-			if(updateUIHandler!=null){
-				Message m = updateUIHandler.obtainMessage(updateType, "updateABList");
-				//Log.d("AddressBook", "send message!!!");
-				updateUIHandler.sendMessage(m);
+			if(AddressBookManager.getContex()!=null){
+				int updateType = AddressBookManager.getInstance().syncContact();
+				if(updateUIHandler!=null){
+					Message m = updateUIHandler.obtainMessage(updateType, "updateABList");
+					//Log.d("AddressBook", "send message!!!");
+					updateUIHandler.sendMessage(m);
+				}
 			}
 		}
 	};
