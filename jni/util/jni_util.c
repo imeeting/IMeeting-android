@@ -30,7 +30,7 @@ jstring get_string_field(JNIEnv* env, jobject thiz, const char *field_name) {
 	jclass c = (*env)->GetObjectClass(env, thiz);
 	jfieldID fid = (*env)->GetFieldID(env, c, field_name, "Ljava/lang/String;");
 	if (fid != NULL) {
-		jint val = (*env)->GetObjectField(env, thiz, fid);
+		jobject val = (*env)->GetObjectField(env, thiz, fid);
 		return val;
 	} else {
 		return NULL;
